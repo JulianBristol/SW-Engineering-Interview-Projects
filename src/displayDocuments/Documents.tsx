@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import img from '../assets/taxImg.png'
 import gridIcon from "../assets/gridIcon.svg"
-import listIcon from "../assets/gridIcon.svg"
+import listIcon from "../assets/listIcon.svg"
 
 enum STATUS {
     SUCCESS = 0,
@@ -36,9 +36,9 @@ const Documents = () => {
     <div>
         <div>
         Your Documents
-        <button onClick={() => toggleDocumentDisplay(false)}><img src={gridIcon} alt='gridIcon'/></button>
+        <button style={{ border: "none", background: "transparent" }} onClick={() => toggleDocumentDisplay(false)}><img src={gridIcon} alt='gridIcon'/></button>
         <span style={{border: '1px solid #DBDFE4', margin: '0 5px'}}/>
-        <button onClick={() => toggleDocumentDisplay(true)}><img src={listIcon} alt='gridIcon'/></button>
+        <button style={{ border: "none", background: "transparent" }} onClick={() => toggleDocumentDisplay(true)}><img src={listIcon} alt='listIcon'/></button>
         </div>
 
         {/* display documents: todo add styling */}
