@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import img from '../assets/taxImg.png'
+import gridIcon from "../assets/gridIcon.svg"
+import listIcon from "../assets/gridIcon.svg"
 
 enum STATUS {
     SUCCESS = 0,
@@ -33,9 +36,9 @@ const Documents = () => {
     <div>
         <div>
         Your Documents
-        <button onClick={() => toggleDocumentDisplay(false)}>gridIcon</button>
+        <button onClick={() => toggleDocumentDisplay(false)}><img src={gridIcon} alt='gridIcon'/></button>
         <span style={{border: '1px solid #DBDFE4', margin: '0 5px'}}/>
-        <button onClick={() => toggleDocumentDisplay(true)}>listIcon</button>
+        <button onClick={() => toggleDocumentDisplay(true)}><img src={listIcon} alt='gridIcon'/></button>
         </div>
 
         {/* display documents: todo add styling */}
@@ -46,17 +49,18 @@ const Documents = () => {
         </div>
         
         
-                <div style={{ display: `${documentDisplay ? "flex" : "block"}` }}>
+                <div style={{ display: `${documentDisplay ? "block" : "flex"}` }}>
         {documents.map((item, k) => (
                     <div>
-                    <div style={{ display: "flex" }}>
-                        image
+                    <div style={{ display: "flex", justifyContent: "space-between", width: "90%", margin: "auto"  }}>
+                        <img src={img} alt="tax img" style={{ height: '100px', width: "100px"}}/>
                         <div>
                             <div key={k} style={{  }}>
                                 {item.text}
                             </div>
                             {item.status}
                         </div>
+                        dots
                     </div>
                 </div>
             ))}
