@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import img from '../assets/taxImg.png'
 import gridIcon from "../assets/gridIcon.svg"
 import listIcon from "../assets/listIcon.svg"
+import dotsIcon from "../assets/dotsIcon.svg"
 
 enum STATUS {
     SUCCESS = 0,
@@ -60,7 +61,7 @@ const Documents = () => {
                             </div>
                             {item.status}
                         </div>
-                        dots
+                        <img src={dotsIcon} alt='more options'/>
                     </div>
                 </div>
             ))}
